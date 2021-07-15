@@ -8,5 +8,5 @@ import { Review } from './review';
 })
 export class AppComponent {
   //create new obj reviewModel through the review class with all the properties set to null.
- reviewModel = new Review("", "", "", "");
+ reviewModel = new Review("", "", "", "","");
 }

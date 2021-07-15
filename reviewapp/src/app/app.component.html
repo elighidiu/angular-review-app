@@ -5,13 +5,37 @@
     <div class="mb-3">
       <input
         type="text"
-        name="name"
-        placeholder="Enter your name"
+        name="fname"
+        placeholder="Enter your first name"
         class="form-control"
-        [(ngModel)]="reviewModel.name"
-        #inputName="ngModel"
-      >
+        [(ngModel)]="reviewModel.fname"
+        #fname="ngModel"
+        required
+        [class.is-valid]="fname.valid"
+        [class.is-invalid]="fname.invalid && fname.touched"
+        pattern="^[a-zA-Z]+(?:-[a-zA-Z]+)*$"
+      />
+      <small class="invalid-feedback">The first name is not valid</small>
+      <small class="valid-feedback">The first name is valid</small>
     </div>
+
+    <div class="mb-3">
+      <input
+        type="text"
+        name="lname"
+        placeholder="Enter your last name"
+        class="form-control"
+        [(ngModel)]="reviewModel.lname"
+        #lname="ngModel"
+        required
+        [class.is-valid]="lname.valid"
+        [class.is-invalid]="lname.invalid && lname.touched"
+        pattern="^[a-zA-Z]+(?:-[a-zA-Z]+)*$"
+      />
+      <small class="invalid-feedback">The last name is not valid</small>
+      <small class="valid-feedback">The last name is valid</small>
+    </div>
+
     <div class="mb-3">
       <input
         type="text"
@@ -20,9 +44,17 @@
         placeholder="Enter your email address"
         class="form-control"
         [(ngModel)]="reviewModel.email"
-        #inputName="ngModel"
-      >
+        #email="ngModel"
+        required
+        [class.is-valid]="email.valid"
+        [class.is-invalid]="email.invalid && email.touched"
+        pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+      />
+
+      <small class="invalid-feedback">The email is not valid</small>
+      <small class="valid-feedback">The email is valid</small>
     </div>
+
     <div class="mb-3">
       <input
         type="text"
@@ -31,9 +63,17 @@
         placeholder="Add image link"
         class="form-control"
         [(ngModel)]="reviewModel.image"
-        #inputName="ngModel"
-      >
+        #image="ngModel"
+        required
+        [class.is-valid]="image.valid"
+        [class.is-invalid]="image.invalid && image.touched"
+        pattern="^[a-z][a-z\d.+-]*:\/*(?:[^:@]+(?::[^@]+)?@)?(?:[^\s:/?#]+|\[[a-f\d:]+])(?::\d+)?(?:\/[^?#]*)?(?:\?[^#]*)?(?:#.*)?$"
+      />
+
+      <small class="invalid-feedback">The image link is not valid</small>
+      <small class="valid-feedback">The image link is valid</small>
     </div>
+
     <div class="mb-3">
       <textarea
         name="textarea"
@@ -42,8 +82,17 @@
         placeholder="Add your review"
         class="form-control"
         [(ngModel)]="reviewModel.textarea"
-        #inputName="ngModel"
-      ></textarea>
+        #textarea="ngModel"
+        required
+        [class.is-valid]="textarea.valid"
+        [class.is-invalid]="textarea.invalid && textarea.touched"
+        pattern="^[a-zA-Z\s]*$"
+        maxlength="250"
+      >
+      </textarea>
+      <small class="invalid-feedback">The review is not valid</small>
+      <small class="valid-feedback">The review is valid</small>
+      <!-- /^([A-Za-z0-9]+.[A-Za-z0-9]+(\r)?(\n)?)+$/ -->
     </div>
     <div class="mb-3">
       <button class="btn btn-primary">Submit your review</button>
