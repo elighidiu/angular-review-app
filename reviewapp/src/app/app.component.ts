@@ -14,9 +14,9 @@ export class AppComponent {
  constructor(private addReviewService: AddReviewService) {
 
  }
-
+ //
  addReview(){
    // console.log(this.reviewModel);
-   this.addReviewService.postReview(this.reviewModel).subscribe(data => console.log("it worked"), error => console.log("it didn't work"));
+   this.addReviewService.addReview(this.reviewModel).subscribe(data => console.log("it worked"), error => console.log("it didn't work"));
  }
 }
