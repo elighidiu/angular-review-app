@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Review } from './review';
+import { AddReviewService } from "./add-review.service";
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,13 @@ import { Review } from './review';
 export class AppComponent {
   //create new obj reviewModel through the review class with all the properties set to null.
  reviewModel = new Review("", "", "", "","");
+
+ constructor(private addReviewService: AddReviewService) {
+
+ }
+
+ addReview(){
+   // console.log(this.reviewModel);
+   this.addReviewService.postReview(this.reviewModel).subscribe(data => console.log("it worked"), error => console.log("it didn't work"));
+ }
 }
