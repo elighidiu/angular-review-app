@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 })
 export class AddReviewService {
 
-  url: string = "";
+  url: string = 'http://localhost:9003/allReviews';
 
   constructor(private http: HttpClient) {
 
