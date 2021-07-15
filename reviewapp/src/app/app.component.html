@@ -1,29 +1,54 @@
-
-
-<style>
- 
-</style>
-
+<style></style>
+{{ reviewModel | json }}
 <div class="container col-md-6 mt-5">
-<form action="">
-  <div class="mb-3">
-  <input type="text" placeholder="Enter your name" class="form-control">
-  </div>
-  <div class="mb-3">
-  <input type="text" placeholder="Enter your email address" class="form-control" >
+  <form #formName="ngForm">
+    <div class="mb-3">
+      <input
+        type="text"
+        name="name"
+        placeholder="Enter your name"
+        class="form-control"
+        [(ngModel)]="reviewModel.name"
+        #inputName="ngModel"
+      >
+    </div>
+    <div class="mb-3">
+      <input
+        type="text"
+        name="email"
+        ngModel
+        placeholder="Enter your email address"
+        class="form-control"
+        [(ngModel)]="reviewModel.email"
+        #inputName="ngModel"
+      >
+    </div>
+    <div class="mb-3">
+      <input
+        type="text"
+        name="image"
+        ngModel
+        placeholder="Add image link"
+        class="form-control"
+        [(ngModel)]="reviewModel.image"
+        #inputName="ngModel"
+      >
+    </div>
+    <div class="mb-3">
+      <textarea
+        name="textarea"
+        ngModel
+        class="form-control"
+        placeholder="Add your review"
+        class="form-control"
+        [(ngModel)]="reviewModel.textarea"
+        #inputName="ngModel"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <button class="btn btn-primary">Submit your review</button>
+    </div>
+  </form>
 </div>
-  <div class="mb-3">
-  <input type="text" placeholder="Add image link" class="form-control" >
-</div>
-  <div class="mb-3">
-    <textarea class="form-control" placeholder="Add your review" class="form-control" ></textarea>
-</div>
-  <div class="mb-3">
-  <button class="btn btn-primary">Submit your review</button>
-</div>
-</form>
-</div>
-
-
 
 <router-outlet></router-outlet>
