@@ -40,12 +40,18 @@ Retrieving data:
 
 
 ## Planning 15/07:
+- Create new project with cli: ng new project-name
 - Set up the project files
 - Make the form and required fields
 - Validating data
 - Connection to the server
 
-## Planning 15/07:
+15/07 evening:
+- Added modal to the submit form
+- Rounded images from url keeping aspect ratio
+- Bootstrap cards on output
+
+## Planning 16/07:
 - Get data from server and display on page
 - Styling
 
