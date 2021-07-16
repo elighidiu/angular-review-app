@@ -90,7 +90,13 @@
               <small class="invalid-feedback">The image link is not valid</small>
               <small class="valid-feedback">The image link is valid</small>
             </div>
-
+            <div class="mb-3">
+          
+              <ngb-rating [max]="5" class="form-control"  name="starRating"
+              ngModel [(ngModel)]="reviewModel.starRating" [readonly]="false">
+            </ngb-rating>
+           
+          </div>
             <div class="mb-3">
               <input
                 type="text"
@@ -122,18 +128,15 @@
                   required
                   [class.is-valid]="textarea.valid"
                   [class.is-invalid]="textarea.invalid && textarea.touched"
-                  pattern="^[a-zA-Z\s]*$"
+                  pattern= "^([A-Za-z0-9]+.[A-Za-z0-9]+(\r)?(\n)?)+$"
                   maxlength="250"
                 >
                 </textarea>
               <small class="invalid-feedback">The review is not valid</small>
               <small class="valid-feedback">The review is valid</small>
-              <!-- /^([A-Za-z0-9]+.[A-Za-z0-9]+(\r)?(\n)?)+$/ -->
+              <!-- "^[a-zA-Z\s]*$" -->
             </div>
 
-            <!--            <div class="mb-3">-->
-            <!--              <button class="btn btn-primary" [disabled]="formName.form.invalid">Submit your review</button>-->
-            <!--            </div>-->
           </div>
 
           <div class="modal-footer">
@@ -152,7 +155,12 @@
           <img class="rounded-circle overflow-hidden mx-auto" [src]="review.image" width="100px" height="100px"
                style=" object-fit: cover;">
           <h5 class="card-title">{{ review.fname }}{{ review.lname }}</h5>
-          <p class="card-text">{{ review.email }}</p>
+          <p class="card-text">{{ review.email }} </p>
+          <div *ngIf="review.starRating===1"> 	&#9733;	&#9734;	&#9734;	&#9734;	&#9734;</div>
+          <div *ngIf="review.starRating===2"> 	&#9733;	&#9733;	&#9734;	&#9734;	&#9734;</div>
+          <div *ngIf="review.starRating===3"> 	&#9733;	&#9733;	&#9733;	&#9734;	&#9734;</div>
+          <div *ngIf="review.starRating===4"> 	&#9733;	&#9733;	&#9733;	&#9733;	&#9734;</div>
+          <div *ngIf="review.starRating===5"> 	&#9733;	&#9733;	&#9733;	&#9733;	&#9733;</div>
         </div>
         <div class="col-md-8">
           <div class="card-body">
