@@ -2,6 +2,14 @@
 
 h1 {
   font-family: 'Montserrat', sans-serif;;
-  font-size: 60px;
+  font-size: 50px;
   color: burlywood;
+}
+
+.card-title{
+  color: chocolate;
+}
+
+img {
+  margin-bottom: 10px;
 }
