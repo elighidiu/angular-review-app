@@ -1,105 +1,169 @@
 <style></style>
 {{ reviewModel | json }}
+
+
 <div class="container col-md-6 mt-5">
-  <form #formName="ngForm" (ngSubmit)="addReview()" novalidate>
-    <div class="mb-3">
-      <input
-        type="text"
-        name="fname"
-        placeholder="Enter your first name"
-        class="form-control"
-        [(ngModel)]="reviewModel.fname"
-        #fname="ngModel"
-        required
-        [class.is-valid]="fname.valid"
-        [class.is-invalid]="fname.invalid && fname.touched"
-        pattern="^[a-zA-Z]+(?:-[a-zA-Z]+)*$"
-      />
-      <small class="invalid-feedback">The first name is not valid</small>
-      <small class="valid-feedback">The first name is valid</small>
-    </div>
 
-    <div class="mb-3">
-      <input
-        type="text"
-        name="lname"
-        placeholder="Enter your last name"
-        class="form-control"
-        [(ngModel)]="reviewModel.lname"
-        #lname="ngModel"
-        required
-        [class.is-valid]="lname.valid"
-        [class.is-invalid]="lname.invalid && lname.touched"
-        pattern="^[a-zA-Z]+(?:-[a-zA-Z]+)*$"
-      />
-      <small class="invalid-feedback">The last name is not valid</small>
-      <small class="valid-feedback">The last name is valid</small>
-    </div>
+  <button type="button" class="btn btn-primary rounded-pill mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add review
+  </button>
 
-    <div class="mb-3">
-      <input
-        type="text"
-        name="email"
-        ngModel
-        placeholder="Enter your email address"
-        class="form-control"
-        [(ngModel)]="reviewModel.email"
-        #email="ngModel"
-        required
-        [class.is-valid]="email.valid"
-        [class.is-invalid]="email.invalid && email.touched"
-        pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-      />
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
 
-      <small class="invalid-feedback">The email is not valid</small>
-      <small class="valid-feedback">The email is valid</small>
-    </div>
+        <form #formName="ngForm" (ngSubmit)="addReview()" novalidate>
 
-    <div class="mb-3">
-      <input
-        type="text"
-        name="image"
-        ngModel
-        placeholder="Add image link"
-        class="form-control"
-        [(ngModel)]="reviewModel.image"
-        #image="ngModel"
-        required
-        [class.is-valid]="image.valid"
-        [class.is-invalid]="image.invalid && image.touched"
-        pattern="^[a-z][a-z\d.+-]*:\/*(?:[^:@]+(?::[^@]+)?@)?(?:[^\s:/?#]+|\[[a-f\d:]+])(?::\d+)?(?:\/[^?#]*)?(?:\?[^#]*)?(?:#.*)?$"
-      />
+          <div class="modal-body">
+            <div class="mb-3">
+              <input
+                type="text"
+                name="fname"
+                placeholder="Enter your first name"
+                class="form-control"
+                [(ngModel)]="reviewModel.fname"
+                #fname="ngModel"
+                required
+                [class.is-valid]="fname.valid"
+                [class.is-invalid]="fname.invalid && fname.touched"
+                pattern="^[a-zA-Z]+(?:-[a-zA-Z]+)*$"
+              />
+              <small class="invalid-feedback">The first name is not valid</small>
+              <small class="valid-feedback">The first name is valid</small>
+            </div>
 
-      <small class="invalid-feedback">The image link is not valid</small>
-      <small class="valid-feedback">The image link is valid</small>
-    </div>
+            <div class="mb-3">
+              <input
+                type="text"
+                name="lname"
+                placeholder="Enter your last name"
+                class="form-control"
+                [(ngModel)]="reviewModel.lname"
+                #lname="ngModel"
+                required
+                [class.is-valid]="lname.valid"
+                [class.is-invalid]="lname.invalid && lname.touched"
+                pattern="^[a-zA-Z]+(?:-[a-zA-Z]+)*$"
+              />
+              <small class="invalid-feedback">The last name is not valid</small>
+              <small class="valid-feedback">The last name is valid</small>
+            </div>
 
-    <div class="mb-3">
-      <textarea
-        name="textarea"
-        ngModel
-        class="form-control"
-        placeholder="Add your review"
-        class="form-control"
-        [(ngModel)]="reviewModel.textarea"
-        #textarea="ngModel"
-        required
-        [class.is-valid]="textarea.valid"
-        [class.is-invalid]="textarea.invalid && textarea.touched"
-        pattern="^[a-zA-Z\s]*$"
-        maxlength="250"
-      >
-      </textarea>
-      <small class="invalid-feedback">The review is not valid</small>
-      <small class="valid-feedback">The review is valid</small>
-      <!-- /^([A-Za-z0-9]+.[A-Za-z0-9]+(\r)?(\n)?)+$/ -->
+            <div class="mb-3">
+              <input
+                type="text"
+                name="email"
+                ngModel
+                placeholder="Enter your email address"
+                class="form-control"
+                [(ngModel)]="reviewModel.email"
+                #email="ngModel"
+                required
+                [class.is-valid]="email.valid"
+                [class.is-invalid]="email.invalid && email.touched"
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              />
+
+              <small class="invalid-feedback">The email is not valid</small>
+              <small class="valid-feedback">The email is valid</small>
+            </div>
+
+            <div class="mb-3">
+              <input
+                type="text"
+                name="image"
+                ngModel
+                placeholder="Add image link"
+                class="form-control"
+                [(ngModel)]="reviewModel.image"
+                #image="ngModel"
+                required
+                [class.is-valid]="image.valid"
+                [class.is-invalid]="image.invalid && image.touched"
+                pattern="^[a-z][a-z\d.+-]*:\/*(?:[^:@]+(?::[^@]+)?@)?(?:[^\s:/?#]+|\[[a-f\d:]+])(?::\d+)?(?:\/[^?#]*)?(?:\?[^#]*)?(?:#.*)?$"
+              />
+
+              <small class="invalid-feedback">The image link is not valid</small>
+              <small class="valid-feedback">The image link is valid</small>
+            </div>
+
+            <div class="mb-3">
+              <input
+                type="text"
+                name="title"
+                ngModel
+                placeholder="Add review title"
+                class="form-control"
+                [(ngModel)]="reviewModel.title"
+                #title="ngModel"
+                required
+                [class.is-valid]="title.valid"
+                [class.is-invalid]="title.invalid && image.touched"
+                pattern="^[a-zA-Z]+(?:-[a-zA-Z]+)*$"
+              />
+
+              <small class="invalid-feedback">The image link is not valid</small>
+              <small class="valid-feedback">The image link is valid</small>
+            </div>
+
+            <div class="mb-3">
+                <textarea
+                  name="textarea"
+                  ngModel
+                  class="form-control"
+                  placeholder="Add your review"
+                  class="form-control"
+                  [(ngModel)]="reviewModel.textarea"
+                  #textarea="ngModel"
+                  required
+                  [class.is-valid]="textarea.valid"
+                  [class.is-invalid]="textarea.invalid && textarea.touched"
+                  pattern="^[a-zA-Z\s]*$"
+                  maxlength="250"
+                >
+                </textarea>
+              <small class="invalid-feedback">The review is not valid</small>
+              <small class="valid-feedback">The review is valid</small>
+              <!-- /^([A-Za-z0-9]+.[A-Za-z0-9]+(\r)?(\n)?)+$/ -->
+            </div>
+
+            <!--            <div class="mb-3">-->
+            <!--              <button class="btn btn-primary" [disabled]="formName.form.invalid">Submit your review</button>-->
+            <!--            </div>-->
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-primary" [disabled]="formName.form.invalid">Submit your review</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="mb-3">
-      <button class="btn btn-primary" [disabled]="formName.form.invalid">Submit your review</button>
+  </div>
+
+  <div *ngFor="let review of allReviews">
+    <div class="shadow p-3 mb-3 bg-body rounded">
+      <div class="row no-gutters">
+        <div class="col-md-4 card-body">
+          <img class="rounded-circle overflow-hidden mx-auto" [src]="review.image" width="100px" height="100px"
+               style=" object-fit: cover;">
+          <h5 class="card-title">{{ review.fname }}{{ review.lname }}</h5>
+          <p class="card-text">{{ review.email }}</p>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ review.title }}</h5>
+            <p class="card-text">{{ review.textarea }}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
     </div>
-  </form>
-  <div *ngFor="let review of allReviews">{{ review.fname }}
-    <br><img [src]="review.image" width="200" height="200" style="border-radius: 50%"></div>
+  </div>
 
 </div>
 

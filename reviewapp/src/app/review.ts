@@ -1,7 +1,8 @@
 export class Review {
- constructor(public fname:String, 
-            public lname:String, 
+ constructor(public fname:String,
+            public lname:String,
             public email:String,
             public image:String,
+            public title: String,
             public textarea:String) {}
 }
