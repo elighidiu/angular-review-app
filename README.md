@@ -23,19 +23,19 @@ Make an Angular application where users can leave review.
 
 ## Must-have features
 Fields needed:
-[x] Name 
-[x] Email
-[x] Image link
-[x] Text input
+- [x] Name 
+- [x] Email
+- [x] Image link
+- [x] Text input
 
 Form validation:
-[x] Error reporting with visual feedback
+- [x] Error reporting with visual feedback
 
 Retrieving data:
-[x] Displaying review on screen
+- [x] Displaying review on screen
 
 ## Nice to have features
-[x] Add a rating system (stars)
+- [x] Add a rating system (stars)
 - Display reviews on a different page
 
 ## Struggles
