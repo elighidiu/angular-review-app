@@ -23,21 +23,23 @@ Make an Angular application where users can leave review.
 
 ## Must-have features
 Fields needed:
-- Name 
-- Email
-- Image link
-- Text input
+[x] Name 
+[x] Email
+[x] Image link
+[x] Text input
 
 Form validation:
-- Error reporting with visual feedback
+[x] Error reporting with visual feedback
 
 Retrieving data:
-- Displaying review on screen
+[x] Displaying review on screen
 
 ## Nice to have features
-- Add a rating system (stars)
+[x] Add a rating system (stars)
 - Display reviews on a different page
 
+## Struggles
+- Validating and using REGEX 
 
 ## Planning 15/07:
 - Create new project with cli: ng new project-name
@@ -53,6 +55,7 @@ Retrieving data:
 
 ## Planning 16/07:
 - Get data from server and display on page
+- Add a rating system
 - Styling
 
 
