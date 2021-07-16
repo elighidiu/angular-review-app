@@ -109,11 +109,11 @@
                 required
                 [class.is-valid]="title.valid"
                 [class.is-invalid]="title.invalid && image.touched"
-                pattern="^[a-zA-Z]+(?:-[a-zA-Z]+)*$"
+                pattern="^\s*[a-zA-Z,\s]+\s*$"
               />
 
-              <small class="invalid-feedback">The image link is not valid</small>
-              <small class="valid-feedback">The image link is valid</small>
+              <small class="invalid-feedback">The title is not valid</small>
+              <small class="valid-feedback">The title is valid</small>
             </div>
 
             <div class="mb-3">
@@ -121,20 +121,18 @@
                   name="textarea"
                   ngModel
                   class="form-control"
-                  placeholder="Add your review"
+                  placeholder="Add your review (min 50 characters)"
                   class="form-control"
                   [(ngModel)]="reviewModel.textarea"
                   #textarea="ngModel"
                   required
                   [class.is-valid]="textarea.valid"
                   [class.is-invalid]="textarea.invalid && textarea.touched"
-                  pattern= "^([A-Za-z0-9]+.[A-Za-z0-9]+(\r)?(\n)?)+$"
-                  maxlength="250"
+                  pattern= "^([1-zA-Z0-1@.\s]{1,255})$"
                 >
                 </textarea>
               <small class="invalid-feedback">The review is not valid</small>
               <small class="valid-feedback">The review is valid</small>
-              <!-- "^[a-zA-Z\s]*$" -->
             </div>
 
           </div>
