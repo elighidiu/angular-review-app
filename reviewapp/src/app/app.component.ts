@@ -9,10 +9,16 @@ import { OnInit} from "@angular/core";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  time = new Date();
+  CurrentTime = this.time.toLocaleString();
+ 
   //create new obj reviewModel through the review class with all the properties set to null.
- reviewModel = new Review("", "", "", "", "",  "", "");
+ reviewModel = new Review("", "", "", "", "",  "", this.CurrentTime, "");
 
  starRating = 0; 
+
+
  allReviews: any;
 
  constructor(private addReviewService: AddReviewService) {

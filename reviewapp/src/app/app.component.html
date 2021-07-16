@@ -1,23 +1,36 @@
 <style></style>
 {{ reviewModel | json }}
 
-
 <div class="container col-md-6 mt-5">
-
-  <button type="button" class="btn btn-primary rounded-pill mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <button
+    type="button"
+    class="btn btn-primary rounded-pill mb-5"
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModal"
+  >
     Add review
   </button>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title" id="exampleModalLabel">Add your review</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
 
         <form #formName="ngForm" (ngSubmit)="addReview()" novalidate>
-
           <div class="modal-body">
             <div class="mb-3">
               <input
@@ -32,7 +45,9 @@
                 [class.is-invalid]="fname.invalid && fname.touched"
                 pattern="^[a-zA-Z]+(?:-[a-zA-Z]+)*$"
               />
-              <small class="invalid-feedback">The first name is not valid</small>
+              <small class="invalid-feedback"
+                >The first name is not valid</small
+              >
               <small class="valid-feedback">The first name is valid</small>
             </div>
 
@@ -87,16 +102,22 @@
                 pattern="^[a-z][a-z\d.+-]*:\/*(?:[^:@]+(?::[^@]+)?@)?(?:[^\s:/?#]+|\[[a-f\d:]+])(?::\d+)?(?:\/[^?#]*)?(?:\?[^#]*)?(?:#.*)?$"
               />
 
-              <small class="invalid-feedback">The image link is not valid</small>
+              <small class="invalid-feedback"
+                >The image link is not valid</small
+              >
               <small class="valid-feedback">The image link is valid</small>
             </div>
             <div class="mb-3">
-          
-              <ngb-rating [max]="5" class="form-control"  name="starRating"
-              ngModel [(ngModel)]="reviewModel.starRating" [readonly]="false">
-            </ngb-rating>
-           
-          </div>
+              <ngb-rating
+                [max]="5"
+                class="form-control"
+                name="starRating"
+                ngModel
+                [(ngModel)]="reviewModel.starRating"
+                [readonly]="false"
+              >
+              </ngb-rating>
+            </div>
             <div class="mb-3">
               <input
                 type="text"
@@ -117,29 +138,36 @@
             </div>
 
             <div class="mb-3">
-                <textarea
-                  name="textarea"
-                  ngModel
-                  class="form-control"
-                  placeholder="Add your review (min 50 characters)"
-                  class="form-control"
-                  [(ngModel)]="reviewModel.textarea"
-                  #textarea="ngModel"
-                  required
-                  [class.is-valid]="textarea.valid"
-                  [class.is-invalid]="textarea.invalid && textarea.touched"
-                  pattern= "^([1-zA-Z0-1@.\s]{1,255})$"
-                >
-                </textarea>
+              <textarea
+                name="textarea"
+                ngModel
+                class="form-control"
+                placeholder="Add your review (min 50 characters)"
+                class="form-control"
+                [(ngModel)]="reviewModel.textarea"
+                #textarea="ngModel"
+                required
+                [class.is-valid]="textarea.valid"
+                [class.is-invalid]="textarea.invalid && textarea.touched"
+                pattern="^([1-zA-Z0-1@.\s]{50,255})$"
+              >
+              </textarea>
               <small class="invalid-feedback">The review is not valid</small>
               <small class="valid-feedback">The review is valid</small>
             </div>
-
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button class="btn btn-primary" [disabled]="formName.form.invalid">Submit your review</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button class="btn btn-primary" [disabled]="formName.form.invalid">
+              Submit your review
+            </button>
           </div>
         </form>
       </div>
@@ -150,27 +178,43 @@
     <div class="shadow p-3 mb-3 bg-body rounded">
       <div class="row no-gutters">
         <div class="col-md-4 card-body">
-          <img class="rounded-circle overflow-hidden mx-auto" [src]="review.image" width="100px" height="100px"
-               style=" object-fit: cover;">
+          <img
+            class="rounded-circle overflow-hidden mx-auto"
+            [src]="review.image"
+            width="100px"
+            height="100px"
+            style="object-fit: cover"
+          />
           <h5 class="card-title">{{ review.fname }}{{ review.lname }}</h5>
-          <p class="card-text">{{ review.email }} </p>
-          <div *ngIf="review.starRating===1"> 	&#9733;	&#9734;	&#9734;	&#9734;	&#9734;</div>
-          <div *ngIf="review.starRating===2"> 	&#9733;	&#9733;	&#9734;	&#9734;	&#9734;</div>
-          <div *ngIf="review.starRating===3"> 	&#9733;	&#9733;	&#9733;	&#9734;	&#9734;</div>
-          <div *ngIf="review.starRating===4"> 	&#9733;	&#9733;	&#9733;	&#9733;	&#9734;</div>
-          <div *ngIf="review.starRating===5"> 	&#9733;	&#9733;	&#9733;	&#9733;	&#9733;</div>
+          <p class="card-text">{{ review.email }}</p>
+          <div *ngIf="review.starRating === 1">
+            &#9733; &#9734; &#9734; &#9734; &#9734;
+          </div>
+          <div *ngIf="review.starRating === 2">
+            &#9733; &#9733; &#9734; &#9734; &#9734;
+          </div>
+          <div *ngIf="review.starRating === 3">
+            &#9733; &#9733; &#9733; &#9734; &#9734;
+          </div>
+          <div *ngIf="review.starRating === 4">
+            &#9733; &#9733; &#9733; &#9733; &#9734;
+          </div>
+          <div *ngIf="review.starRating === 5">
+            &#9733; &#9733; &#9733; &#9733; &#9733;
+          </div>
         </div>
         <div class="col-md-8">
           <div class="card-body">
             <h5 class="card-title">{{ review.title }}</h5>
             <p class="card-text">{{ review.textarea }}</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text">
+              <small class="text-muted">Posted on {{ review.CurrentTime }}</small>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
 
 <router-outlet></router-outlet>

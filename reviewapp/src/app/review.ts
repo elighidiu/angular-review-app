@@ -5,5 +5,6 @@ export class Review {
             public image:String,
             public title: String,
             public starRating: String,
+            public CurrentTime: String,
             public textarea:String) {}
 }
