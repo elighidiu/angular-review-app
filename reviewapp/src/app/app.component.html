@@ -1,15 +1,18 @@
 <style></style>
-{{ reviewModel | json }}
+<!--{{ reviewModel | json }}-->
 
 <div class="container col-md-6 mt-5">
-  <button
-    type="button"
-    class="btn btn-primary rounded-pill mb-5"
-    data-bs-toggle="modal"
-    data-bs-target="#exampleModal"
-  >
-    Add review
-  </button>
+  <div class="row d-flex mb-2">
+    <div class="col-md-6 d-flex justify-content-center justify-content-md-start">
+      <h1 class="mt-auto">Reviews</h1>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center justify-content-md-end">
+      <button type="button" class="btn btn-outline-primary mt-auto mb-3" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">
+        Add review
+      </button>
+    </div>
+  </div>
 
   <div
     class="modal fade"
@@ -165,7 +168,10 @@
             >
               Close
             </button>
-            <button class="btn btn-primary" [disabled]="formName.form.invalid">
+            <button class="btn btn-primary"
+                    [disabled]="formName.form.invalid"
+                    data-bs-dismiss="modal"
+            >
               Submit your review
             </button>
           </div>
