@@ -19,7 +19,7 @@
 - Send http requests from an angular app to a node server
 
 ## The Mission
-Make an Angular application where users can leave review.
+Make an Angular application where users can leave reviews.
 
 ## Must-have features
 Fields needed:
@@ -58,6 +58,9 @@ Retrieving data:
 - Add a rating system
 - Styling
 
+## Preview
+![modal](/img/modal.png)
+![reviews](/img/reviews.png)
 
 
 
